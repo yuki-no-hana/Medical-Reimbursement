@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>药品添加</title>
+		<link rel="stylesheet" type="text/css" href="../css/drugadd.css" />
+		
+		<style type="text/css">	</style>
+	</head>
+	<body>
+		<div id="app">
+			
+				<div class="form-group">
+					<label>药品名称*:</label>
+					<input v-model="param.drugname"  @focus="clear(2)" @blur="check(2)" ></input>
+					<span class="msg" v-if="msgFlg.drugname">请输入药品名称</span>
+				</div>			
+				<!-- <div class="form-group">
+					<label>药品编号*:</label>
+					<input type="text" v-model="param.drugid" @focus="clear(3)" @blur="check(3)" />
+					<span class="msg" v-if="msgFlg.drugid">请输入药品编号</span>
+				</div> -->
+				
+				<div class="form-group">
+					<label>价格：</label>
+					<input type="text" v-model="param.price" @focus="clear(4)" @blur="check(4)" />
+					<span class="msg" v-if="msgFlg.price">请输入价格</span>
+				</div>
+				
+				<div class="form-group">
+					<label>厂家：</label>
+					<input type="text" v-model="param.manufactor" @focus="clear(5)" @blur="check(5)" />
+					<span class="msg" v-if="msgFlg.manufactor">请输入药品厂家</span>
+				</div>
+				
+				<div class="form-group">
+					<label>药品类型*:</label>
+					<select v-model="param.drugtypeid" @focus="clear(6)" @blur="check(6)">
+						<option value="">-请选择-</option>
+                        <option v-for="item in drugtypelist" :value="item.drugtypeid">{{item.drugtypeid}}</option>
+
+					</select> 
+					<span class="msg" v-if="msgFlg.drugtype">请选择药品类型</span>
+				</div>
+				<div class="form-group">
+					<label>是否审批*:</label>
+					<select v-model="param.drugcheck" @focus="clear(7)" @blur="check(7)">
+						<option value="">-请选择-</option>
+						<option value="Y">是</option>
+						<option value="N">否</option>
+					</select>
+					<span class="msg" v-if="msgFlg.drugcheck">请选择是否审批</span>
+				</div>
+				<div class="form-group">
+					<label>是否报销*:</label>
+					<select v-model="param.baoxiao" @focus="clear(8)" @blur="check(8)">
+						<option value="">-请选择-</option>
+						<option value="Y">是</option>
+						<option value="N">否</option>
+					</select>
+					<span class="msg" v-if="msgFlg.baoxiao">请选择是否报销</span>
+				</div>
+
+
+				<div class="form-group">
+					<label></label>
+					<button @click="save()" :disabled="saveFlg">保存</button>
+					
+					<button onclick="location.replace('drug maintenance.html');" >返回</button>
+					<span :class="showmsg.classobject">{{showmsg.msginfo}}</span>
+				</div>
+			
+		</div>
+		
+		<script type="text/javascript" src="../js/vue.js" ></script>
+		<script type="text/javascript" src="../js/axios.js" ></script>
+		<script type="text/javascript" src="../js/message.js" ></script>
+		<script>
+			var vue = new Vue({
+				el : "#app",
+				data : {
+					"param" : {
+						"drugname" : "",
+						/* "drugid" : "", */
+						"baoxiao" : "",
+						"price" : "",
+						"drugtypeid" : "",
+						"manufactor" : "",
+						"drugcheck" : ""
+					},
+					"drugtypelist" : [
+					],
+					
+					"msgFlg" : {
+						"drugname" : false,
+						/* "drugid" : false, */
+						"baoxiao" : false,
+						"price" : false,
+						"drugtype" : false,
+						"manufactor" : false,
+						"drugcheck" : false,	
+					},
+					showmsg: {
+						msginfo: "",
+						classobject: {
+							msg: false,
+							success: false
+						}
+					},
+					"saveFlg" : false
+				},
+				methods : {
+					save : function() {
+						this.showmsg.msginfo = "";
+						this.saveFlg = true;
+						for(var i=2;i<=7;i++) {
+							this.check(i);
+						}
+						
+						if(this.msgFlg.drugname == false  && 
+						   /* this.msgFlg.drugid == false && */this.msgFlg.price== false  &&
+						   this.msgFlg.manufactor == false && this.msgFlg.drugtype == false &&
+							this.msgFlg.drugcheck == false && this.msgFlg.baoxiao== false ) {
+						   	axios.post("http://localhost:8000/medical/api/drugid/add", 
+								{
+									    "drugname":this.param.drugname,
+									    // "drugid":this.param.drugid,
+									    "price":this.param.price,
+									    "manufactor":this.param.manufactor,
+									    "drugtypeid":this.param.drugtypeid,
+									    "approval":this.param.drugcheck,
+									    "qualification":this.param.baoxiao,
+
+
+						   		})
+						   		.then(res => {
+									if(res.data.result) {
+										// 更新成功
+										this.showmsg.classobject.success = true;
+										this.showmsg.classobject.msg = false;
+										this.showmsg.msginfo = message.A006;
+										this.saveFlg = true;
+										
+										setTimeout("location.replace('drug maintenance.html')", 3000);
+									} else {
+										this.showmsg.classobject.success = false;
+										this.showmsg.classobject.msg = true ;
+										this.showmsg.msginfo = message.A007;
+										this.saveFlg = false;
+									}
+						   		})
+						   		.catch(error => {
+						   			location.replace('drug maintenance.html');
+						   		});	
+						}
+					},
+					check : function(type) { 
+						if(type==2) {
+							var reg = /^.{1,20}$/;
+							if(!reg.test(this.param.drugname)) {
+								this.msgFlg.drugname = true;
+								return;
+							}
+						} /* else if(type==3) {
+							var reg = /^\d{32,32}$/;
+							if(!reg.test(this.param.drugid)) {
+								this.msgFlg.drugid = true;
+								return;
+							} 
+						} */else if(type==3) {
+							
+							if(this.param.price == null || this.param.price == "") {
+								this.msgFlg.price = true;
+								return;
+							}
+						} else if(type==4) {
+
+							if(this.param.manufactor == null || this.param.manufactor == "" ) {
+								this.msgFlg.manufactor = true;
+								return;
+							}
+						} else if(type==5) {
+							if(this.param.drugtypeid == null || this.param.drugtype == "") {
+								this.msgFlg.drugtype = true;
+								return;
+							}
+						} else if(type==6) {
+							if(this.param.drugcheck == null || this.param.drugcheck == "") {
+								this.msgFlg.drugcheck = true;
+								return;
+							}
+						} else if(type==7) {
+							if(this.param.baoxiao == null || this.param.baoxiao == "") {
+								this.msgFlg.baoxiao= true;
+								return;
+							}
+						}
+					},
+					clear : function(type) {
+						if(type==2) {
+							this.msgFlg.drugname = false;
+
+						} else if(type==3) {
+							this.msgFlg.drugid = false;
+						} else if(type==4) {
+							this.msgFlg.price = false;
+							} else if(type==5) {
+								this.msgFlg.manufactor = false;
+							} else if(type==6) {
+								this.msgFlg.drugtype = false;
+							} else if(type==7) {
+								this.msgFlg.drugcheck = false;
+							} else if(type==8) {
+								this.msgFlg.baoxiao = false;
+						} 
+					}
+				},
+				created : function() {
+					axios.get("http://localhost:8000/medical/api/drugtype/search",)
+						.then(res => {
+							console.log(res.data.result);
+							this.drugtypelist = res.data.result;
+						})
+						.catch(error => {
+							location.href = "../500.html";
+						});
+
+				}
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>管理员操作界面</title>
+
+	</head>
+	<body>
+
+		<div id="main">
+
+			<h1>欢迎管理员</h1>
+			<button @click="drugmain()">药品维护</button>
+			<button @click="admincheck()">报销单审批</button>
+
+		</div>
+		<script type="text/javascript" src="../js/vue.js"></script>
+		<script>
+			var demo = new Vue({
+				el: '#main',
+				data: {
+
+				},
+				methods: {
+					drugmain: function() {
+						location.replace("../drugcontrolhtml/drug maintenance.html");
+					},
+					admincheck:function(){
+						location.replace("admincheck1.html");
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

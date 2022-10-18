@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app" style="text-align: center;vertical-align: middle">
+		  <form>
+			<h3>请输入您要找回的账户信息</h3>
+		    <p><input type="text" placeholder="请输入您要找回的账户id" v-model="param.userName" @blur="check(1)" @focus="clear(1)"/></p>
+			<span class="msg" v-if="errorFlg.userNameFlg">{{errorMsg.userNameMsg}}</span>
+			<span class="msg" v-if="errorFlg.userNameLengthFlg">{{errorMsg.userNameLengthMsg}}</span>
+		    <p><input type="text" placeholder="请输入绑定的手机" v-model="param.phonenum" @blur="check(2)" @focus="clear(2)"/></p>
+			<span class="msg" v-if="errorFlg.phonenumFlg">{{errorMsg.phonenumMsg}}</span>
+			<span class="msg" v-if="errorFlg.phonenumLengthFlg">{{errorMsg.phonenumLengthMsg}}</span>
+			<br/>
+			<button type="button"@click="mysubmit(param.userName)">提交</button>
+		  </form>
+		</div>
+		<script type="text/javascript" src="js/axios.js"></script>
+		<script type="text/javascript" src="js/vue.js" ></script>
+		<script type="text/javascript" src="js/message.js" ></script>
+		<script>
+		   var app=new Vue({
+			   el : "#app",
+			   data:{
+				  param : {
+				  	"userName" : "",
+				  	"phonenum" : ""
+				  },
+				  errorFlg : {
+				  	"userNameFlg" : false,
+				  	"phonenumFlg" : false,
+				  	"resetpwFlg" : false,
+					"userNameLengthFlg":false,
+					"phonenumLengthFlg":false
+				  },
+				  errorMsg : {
+				  	"userNameMsg" : "",
+				  	"phonenumMsg" : "",
+				  	"resetpwMsg" : "",
+					"userNameLengthMsg":"请输入正确的用户名长度",
+					"phonenumLengthMsg":"请输入正确的联系电话长度"
+				  }
+			   },
+			   methods:{
+				mysubmit:function(id){	   					
+				  	if(this.param.phonenum.length!=11){alert("输入的联系电话长度不正确！")
+				  						}
+				  						else{
+					//发送请求开始
+								axios.post("http://localhost:8000/medical/api/findmypw/yanzheng",
+									   					   				 {
+									   					   				   	 "username": this.param.userName,
+									   					   				   	  "phonenum":this.param.phonenum
+									   					   				   			 })
+									   					   				   .then(res=>{
+									   					   				   console.log(res.data);
+									   					   				   	if(res.data.msgId=="A001") {//验证不成功
+									   					   				   		alert("没有此用户名！");
+									   					   				   		this.param.userName="";
+									   					   				   		this.param.phonenum="";
+									   					   				   		} else if(res.data.msgId=="A002"){
+									   					   				   		alert("没有此联系电话！");
+									   					   				   		this.param.phonenum="";
+									   					   				   			}
+									   					   				   	else if(res.data.msgId=="A003"){
+									   					   				   							// 验证成功
+									   					   						location.replace("resetpw.html?id=" + id);
+									   					   				 			}
+									   					   				   	})//结果处理结束
+									   					   				   		.catch(error=>{
+									   					   				   		location.href="500.html";
+									   					   				  		})
+																			}//else 结束
+									   					   		
+				},//函数结束
+				   check : function(type) {
+				   	if(type==1) {
+				   		if(this.param.userName == null || this.param.userName == "") {
+				   			this.errorFlg.userNameFlg = true;
+				   			this.errorMsg.userNameMsg = "请输入用户名";
+				   		}
+				   	} else if(type ==2) {
+				   		if(this.param.phonenum == null ||this.param.phonenum == "") {
+				   			this.errorFlg.phonenumFlg = true;
+				   			this.errorMsg.phonenumMsg = "请输入联系电话";
+				   		}
+				   	}
+				   },
+				   clear : function(type) {
+				   	if(type==1) {
+				   		this.errorFlg.userNameFlg = false;
+				   	}  else if(type ==2) {
+				   		this.errorFlg.phonenumFlg = false;
+				   	}
+				   }
+			   }
+		   })
+		</script>
+	</body>
+</html>

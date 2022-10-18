@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app" style="text-align: center;vertical-align: middle;">
+			<p>医疗报销系统</p>
+			<form>
+				<p><span>用户名 : </span>
+					<input id="username" type="text" placeholder="请输入您的用户名" v-model="username" @click="resetflag(1)" />
+					<span v-if="userflag" style="color: red;">请输入用户名</span>
+				</p>
+				<p><span>密码 : </span>
+					<input id="password" type="text" placeholder="请在此处输入您的密码" v-model="password"
+						@click="resetflag(2)" />
+					<span v-if="passwordflag" style="color: red;">请输入密码</span>
+				</p>
+				<a href="findmypw.html">忘记密码</a>
+				</p>
+				<p>
+					<button type="button" @click="login()">登录</button>
+					<button type="button" @click="clear()">清除</button>
+				</p>
+
+			</form>
+		</div>
+		<script type="text/javascript" src="js/axios.js"></script>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript" src="js/message.js"></script>
+		<script>
+			var app = new Vue({
+				el: "#app",
+				data: {
+					userflag: false,
+					passwordflag: false,
+					username: "",
+					password: "",
+					alertmessage:"nope"
+				},
+				methods: {
+					login: function() {
+						if (this.username == null || this.username == "")
+							this.userflag = true;
+						if (this.password == null || this.password == "")
+							this.passwordflag = true;
+						if (this.userflag || this.passwordflag)
+							return;
+							
+						axios.post("http://localhost:8000/medical/api/user/login", {
+								"username": this.username,
+								"password": this.password
+								
+							})
+							.then(res => {
+								console.log(res.data);
+								if (res.data.msgId == "A001") {
+									alert(message.A001);
+								} else if (res.data.msgId == "A002") {
+									alert(message.A002);
+								}  else if (res.data.msgId == "A012") {
+									alert(message.A012);
+									location.replace("templates/userTitle.html");
+								} else if (res.data.msgId == "A013") {
+									alert(message.A013);
+									location.replace("templates/admin.html");
+								}
+							})
+							.catch(res => {
+								location.href="500.html";
+							});
+					},
+					resetflag: function(type) {
+						if (type == 1) {
+							this.userflag = false;
+						} else if (type == 2) {
+							this.passwordflag = false;
+						}
+					},
+					clear: function() {
+						this.username = "";
+						this.password = "";
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

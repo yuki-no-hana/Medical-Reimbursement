@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+	
+		
+		<div id="per">
+			<fieldset>	
+			<button @click="search()">个人信息</button>
+				<li v-for="(item,i) in result" style="list-style-type: none;">
+					    <label>用户昵称:</label>
+						<input type="text" v-model="item.username" readonly="readonly" style="background-color: #BCBCBC;"/> <br />
+						
+						<label>用户姓名:</label>
+						<input type="text" v-model="item.name"  /> <br />
+						
+						<label>证件类型:</label>
+						<input type="text" v-model="item.type"  readonly="readonly"/> <br />
+						
+						<label>证件号码:</label>
+						<input type="text" v-model="item.identity"  readonly="readonly"/> <br />
+						
+						<label>国家:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+						<input type="text" v-model="item.nation"  readonly="readonly"/>  <br />
+						
+						<label>用户住址:</label>
+						<input type="text" v-model="item.address"  readonly="readonly"/> <br />
+						
+						<label>用户电话:</label>
+						<input type="text" v-model="item.phonenum"  readonly="readonly"/> <br />
+				
+				        <label>低保卡号:</label>
+				        <input type="text" v-model="item.scardnum"  readonly="readonly"/> <br />
+						
+						<label>健康状态:</label>
+						<input type="text" v-model="item.registedinfo"  readonly="readonly"/> <br />
+						
+				</li>
+		
+			</fieldset>
+			
+			<fieldset>
+		<button @click="update()">修改</button><br />
+		
+	<label>用户电话:</label>
+	<input type="text" v-model="updateData.phonenum" style="background-color: #BCBCBC;"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" placeholder="请输入数字且长度限制11位" maxlength="11"/>
+	
+	<br />
+	
+	<label>用户地址:</label>
+	<input type="text" v-model="updateData.address" style="background-color: #BCBCBC; "  placeholder="请输入地址"/> <br />	
+		
+					
+			</fieldset>
+			<fieldset>
+		<button @click="goback()">返回</button><br />
+		</fieldset>
+		</div>
+	
+		
+		<script type="text/javascript" src="../js/axios.js"></script>
+		<script type="text/javascript" src="../js/vue.js"></script>
+			<script type="text/javascript" src="../js/message.js" ></script>
+		<script>
+		var vue = new Vue({
+			el:'#per',
+			
+			
+			methods:{
+				
+				search:function(){
+					axios.post("http://localhost:8000/medical/api/userinfo/getuserinfo",{
+						"username":"zhangsan"
+						
+					})
+					.then(res => {
+						this.result = res.data.result;
+					})
+					.catch(error => {
+					alert("输入有误，请重新输入");
+						 this.info1 ="";
+				})
+				},
+			goback:function(){
+				location.replace("userTitle.html");
+			},
+				
+			update: function() {
+		
+				
+					axios.post("http://localhost:8000/medical/api/userinfo/update", {
+						  "username":"zhangsan",
+							"id":this.updateData.id,
+							"name":this.updateData.name,
+							"type":this.updateData.type,
+							"identity":this.updateData.identity,
+							"codeid":this.updateData.codeid,
+							"birthday":this.updateData.birthday,
+							"nation":this.updateData.nation,
+							"address":this.updateData.address,
+							"phonenum":this.updateData.phonenum,
+							"scardnum":this.updateData.scardnum,
+							"registedinfo":this.updateData.registedinfo
+			})
+						
+						
+										
+						.then(res => {
+							if (res.data.result) {
+								// 更新成功
+								this.showmsg.classobject.success = true;
+								this.showmsg.classobject.msg = false;
+								this.showmsg.msginfo = "修改成功，请再次点击个人信息按钮查看";
+								this.saveFlg = true;
+								alert(this.showmsg.msginfo);
+								row.show = false;
+								this.search();
+							} else {
+								this.showmsg.classobject.success = false;
+								this.showmsg.classobject.msg = true;
+								this.showmsg.msginfo = message.A009;
+								this.saveFlg = false;
+							}
+						})
+						.catch(error => {
+						
+						});	
+				
+				}
+	
+				
+			}	,
+			data:{
+					result:{
+					},
+				
+				updateData: {
+					    "username":"zhangsan",
+					    "id":"1",
+					    "name":"张三",
+					     "type":"身份证",
+					    "identity":"123456199911114314",
+					    "codeid":"G01",
+					    "birthday":"19990910",
+					    "nation":"中国",
+					     "address":"",   
+					    "phonenum":"",
+					    "scardnum":"42ab3dce2f6844e7",
+					     "registedinfo":"肿瘤"
+				},
+				
+				showmsg: {
+					msginfo: "",
+					classobject: {
+						msg: false,
+						success: false
+					}
+				}
+					},
+		
+		
+		
+		
+			
+		})
+			
+		</script>
+		
+	</body>
+</html>

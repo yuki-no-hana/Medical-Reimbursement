@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>usersubmit</title>
+		<style type="text/css">
+			p,
+			li {
+				margin: 1px;
+				padding: 0;
+			}
+
+			ul {
+				margin: 10px;
+				;
+				padding: 0;
+			}
+
+			#app {
+				width: 98%;
+			}
+
+			#all {
+				width: 98%;
+				display: flex;
+			}
+
+			#main {
+				width: 100%;
+				background-color: #ffaa00;
+				float: left;
+				
+			}
+
+			#side {
+				width: 100%;
+				background-color: #feb;
+				float: left;
+				
+			}
+
+			#beside {
+				width: 100%;
+				background-color: #9AC9D8;
+				float: left;
+			}
+
+			#medicalinfo {
+				width: 96%;
+				background-color: #9AC9D8;
+				float: left;
+			}
+
+			#beside ul {
+				list-style-type: none;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="../css/user_admin.css" />
+		<script src="../js/vue.js"></script>
+		<script src="../js/axios.js"></script>
+		<script src="../js/message.js"></script>
+	</head>
+	<body style="width:100%">
+		<div id="app">
+
+			<div id="main">
+				<span style="font-size: 30px;margin-left: 38%;">普通</span>
+				<!-- 	<ol>
+				<li v-for="(arr,index) in list">
+					<ul>
+						<li type="none">{{arr.name}}</li>
+						<li>{{arr.price}}元</li>
+						<li>{{arr.num}}盒</li>
+						<li>{{arr.type}}类</li>
+						<li>总金额{{arr.cost}}元</lui>
+						<li>报销金额{{arr.diss}}元</li>
+					</ul>
+				</li>
+			
+			
+				<li>药品总报销45元</li>
+			</ol> -->
+				<div id="ntableplace">
+					<table border="1" >
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>处方编号</th>
+								<th>药品编号</th>
+								<th>药物名称</th>
+								<th>药品类型</th>
+								<th>报销比例</th>
+								<th>药品数量</th>
+								<th>药品单价</th>
+								<th>处方总价</th>
+								<th>报销估价</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr v-for="(normalitem , index) in normal.normallist">
+								<td v-text="index+1"></td>
+								<td v-text="normalitem.treatmentid"></td>
+								<td v-text="normalitem.drugid"></td>
+								<td v-text="normalitem.drugname"></td>
+								<td v-text="normalitem.drugtypename"></td>
+								<td v-text="normalitem.discount"></td>
+								<td v-text="normalitem.drugnum"></td>
+								<td v-text="normalitem.price"></td>
+								<td v-text="normalitem.totalprice"></td>
+								<td v-text="normalitem.disprice"></td>
+							</tr>
+						</tbody>
+					</table>
+					<div style="font-size:15px; font-weight:bold">
+						<div style="display: inline-block;">
+							处方总价：
+							<span v-text="normal.nallTotal"></span>
+							元
+						</div>
+						<div style="display: inline-block;">
+							预计药品报销 ：
+							<span v-text="normal.nallDiscounted"></span>
+							元
+						</div>
+						<div style="display: inline-block;">预计报销比例：
+							<span v-text="normal.ndiscountPercent"></span>
+							%
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="side">
+				<div id="stableplace">
+					<span style="font-size: 30px;margin-left: 40%;">特检特治</span>
+					<table border="1" cellpadding="0" cellspacing="0">
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>处方编号</th>
+								<th>药品编号</th>
+								<th>药物名称</th>
+								<th>药品类型</th>
+								<th>报销比例</th>
+								<th>药品数量</th>
+								<th>药品单价</th>
+								<th>处方总价</th>
+								<th>报销估价</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr v-for="(specialitem , index) in special.speciallist">
+								<td v-text="index+1"></td>
+								<td v-text="specialitem.treatmentid"></td>
+								<td v-text="specialitem.drugid"></td>
+								<td v-text="specialitem.drugname"></td>
+								<td v-text="specialitem.drugtype"></td>
+								<td v-text="specialitem.discount"></td>
+								<td v-text="specialitem.drugnum"></td>
+								<td v-text="specialitem.price"></td>
+								<td v-text="specialitem.totalprice"></td>
+								<td v-text="specialitem.disprice"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div>
+					<div style="font-size:15px; font-weight:bold">
+						<div style="display: inline-block;">
+							处方总价：
+							<span v-text="special.sallTotal"></span>
+							元
+						</div>
+						<div style="display: inline-block;">
+							预计药品报销 ：
+							<span v-text="special.sallDiscounted"></span>
+							元
+						</div>
+						<div style="display: inline-block;">预计报销比例：
+							<span v-text="special.sdiscountPercent"></span>
+							%
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="beside">
+				<div id="medicalinfo" >
+					<ul style="padding-left:30%">
+						<li><span>甲类报销</span><span
+								v-text="typeanddiscount[0].discount"></span><span>%，乙类药品报销</span><span
+								v-text="typeanddiscount[1].discount"></span><span>%，丙类报销</span><span
+								v-text="typeanddiscount[2].discount"></span><span>%</span></li>
+						<li><span>自费满足</span><span v-text="medicalparam.start"></span><span>元且少于</span><span
+								v-text="medicalparam.firstlevel"></span><span>元报销</span><span
+								v-text="medicalparam.firstdiscount"></span><span>%;</span></li>
+						<li><span>少于</span><span v-text="medicalparam.secondlevel"></span><span>元报销</span><span
+								v-text="medicalparam.seconddiscount"></span><span>%;</span></li>
+						<li><span>少于</span><span v-text="medicalparam.end"></span><span>元封顶线报销</span><span
+								v-text="medicalparam.thirddiscount"></span><span>%</span></li>
+					</ul>
+					<div style="padding-left:30%">
+						<input v-model="scardnum" type="text" placeholder="请输入您的医保卡号" style="display:inline-block" id="inputframe"/>
+					</div>
+					<button style="background-color: #6FC5EE;width: 150px;margin-left: 300px;float: left;"
+						v-on:click="getAssessments()">引入</button>
+					<button style="background-color: #6FC5EE;width: 150px;margin-left: 300px;float: left;"
+						v-on:click="submitAll()">提交</button>
+				</div>
+			</div>
+			<button @click="goback()">返回</button>
+		</div>
+		<script>
+			// import Vue from '../js/vue.js'
+			// import axios from '../js/axios.js'
+			var vm = new Vue({
+				el: "#app",
+				data: {
+					"normal": {
+						"normallist": [],
+						"nallTotal": "",
+						"nallDiscounted": "",
+						"ndiscountPercent": ""
+					},
+					"special": {
+						"speciallist": [],
+						"sallTotal": "",
+						"sallDiscounted": "",
+						"sdiscountPercent": ""
+					},
+					"typeanddiscount": [],
+					"medicalparam": "",
+					"scardnum": ""
+				},
+				methods: {
+					"getAssessments": function() {
+						vm.$set(this.$data.normal, "normallist", []);
+						vm.$set(this.$data.normal, "nallTotal", "");
+						vm.$set(this.$data.normal, "nallDiscounted", "");
+						vm.$set(this.$data.normal, "ndiscountPercent", "");
+						vm.$set(this.$data.normal, "normal", "");
+						vm.$set(this.$data.special, "speciallist", []);
+						vm.$set(this.$data.special, "sallTotal", "");
+						vm.$set(this.$data.special, "sallDiscounted", "");
+						vm.$set(this.$data.special, "sdiscountPercent", "");
+						vm.$set(this.$data, "medicalparam", "");
+					    this.$forceUpdate();
+						
+						if ("" != this.$data.scardnum&&null!=this.$data.scardnum&&this.$data.scardnum.length==16) {
+							axios.post("http://localhost:8000/medical/api/user/medicalparam", {
+								"scardnum": this.$data.scardnum
+							}).then((res) => {
+								vm.$set(this.$data, "medicalparam", res.data.result);
+								vm.$set(this.$data.medicalparam, "firstdiscount", this.$data.medicalparam
+									.firstdiscount * 100);
+								vm.$set(this.$data.medicalparam, "seconddiscount", this.$data.medicalparam
+									.seconddiscount * 100);
+								vm.$set(this.$data.medicalparam, "thirddiscount", this.$data.medicalparam
+									.thirddiscount * 100);
+								this.$forceUpdate();
+							});
+							axios.post("http://localhost:8000/medical/api/user/assessments", {
+									"scardnum": this.$data.scardnum
+								})
+								.then((res) => {
+									if(res.data.msgId=="A010"){
+										window.alert("操作失败，请检查您的输入");
+									}
+									if(res.data.msgId=="A011"){
+									if(null!=res.data.result.normal||res.data.result.normal.length!=0){
+										vm.$set(this.$data, "normal", res.data.result.normal);
+									}
+									if(null!=res.data.result.special||res.data.result.special.length!=0){
+										vm.$set(this.$data, "special", res.data.result.special);
+									}
+									this.$forceUpdate();
+									}
+								});
+						}
+						else{
+							window.alert("请您输入合法的社保卡号");
+							var node=document.getElementById("inputframe");
+							node.focus();
+						}
+					},
+					goback:function(){
+						location.replace("userTitle.html");
+					},
+					"submitAll": function() {
+						var normalIds = [];
+						var specialIds = [];
+						for (var index = 0; index < vm.$data.normal.normallist.length; index++) {
+							normalIds.push(vm.$data.normal.normallist[index].treatmentid);
+						}
+						for (var index = 0; index < vm.$data.special.speciallist.length; index++) {
+							specialIds.push(vm.$data.special.speciallist[index].treatmentid);
+						}
+						if(""==this.$data.scardnum){
+							window.alert("请先输入您的医保卡号,谢谢");
+							return;
+						}
+						else{
+							if(this.$data.scardnum.length!=16){
+								window.alert("请您输入正确的医保卡信息,谢谢！");
+								return;
+							}
+							if(this.$data.scardnum.length==16&&normalIds.length==0&&specialIds.length==0){
+								window.alert("抱歉，您当前没有需要报销的诊疗项目")
+							}
+							else{
+								axios.post("http://localhost:8000/medical/api/user/treatments/submitall", {
+									"normalIds": normalIds,
+									"specialIds": specialIds
+								}).then((res)=>{
+									if(true==res.data.result[0]||true==res.data.result[1]){
+										window.alert("提交成功");
+									}
+									else{
+										window.alert("提交失败，请核验您的诊疗信息存在后重试");
+									}
+								})
+							}
+						}
+					},
+					inputcheck:function(){
+						var node=document.getElementById("inputframe");
+						if(""==node.innerText||null==node.innerText||node.innerText.length!=16){
+							window.alert("请输入合法的医保卡号,谢谢！");
+							node.focus();
+						}
+					}
+
+				},
+				created: function() {
+					axios.post("http://localhost:8000/medical/api/drugtype/common/typeanddiscount")
+						.then((res) => {
+							vm.$set(this.$data, "typeanddiscount", res.data.result);
+							for (var index = 0; index < this.$data.typeanddiscount.length; index++) {
+								vm.$set(this.$data.typeanddiscount[index], "discount", this.$data
+									.typeanddiscount[index].discount * 100);
+							}
+							this.$forceUpdate();
+							this.$forceUpdate();
+						})
+				}
+			});
+		</script>
+	</body>
+</html>

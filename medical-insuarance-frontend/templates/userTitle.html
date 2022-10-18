@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>用户操作界面</title>
+
+	</head>
+	<body>
+
+		<div id="main">
+
+			<h1>欢迎用户</h1>
+			<button @click="person()">个人信息</button>
+			<button @click="usercheck()">报销单查看</button>
+			<button @click="usersubmit()">报销单提交</button>
+
+
+		</div>
+		<script type="text/javascript" src="../js/vue.js"></script>
+		<script>
+			var demo = new Vue({
+				el: '#main',
+				data: {
+
+				},
+				methods: {
+					person: function() {
+						location.replace("perinfo.html");
+					},
+					usersubmit: function() {
+						location.replace("usersubmit.html");
+					},
+					usercheck: function() {
+						location.replace("usercheck1.html");
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

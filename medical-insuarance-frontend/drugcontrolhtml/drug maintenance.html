@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>药品查询</title>
+		<link rel="stylesheet" type="text/css" href="../css/demo.css" />
+	</head>
+	<body>
+		<div id="app">
+			<button @click="search()">查询</button>
+			<p>药品编号<input type="text" v-model="searchParam.drugId" /><br />
+			<p>药品名称<input type="text" v-model="searchParam.drugName" /><br />
+			<p>药品厂商<input type="text" v-model="searchParam.manuFactor" /><br />
+
+				<button @click="create()">增添</button>
+
+				<span :class="showmsg.classobject">{{showmsg.msginfo}}</span>
+
+			<table border="4">
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>药品编号</th>
+						<th>药品名称</th>
+						<th>药品类型</th>
+						<th>报销比例</th>
+						<th>药品价格</th>
+						<th>药品厂商</th>
+						<th>删除</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="(item,i) in result">
+						<td>{{item.id}}</td>
+						<td>{{item.drugid}}</td>
+						<td>{{item.drugname}}</td>
+						<td>{{item.drugtypename}}</td>
+						<td>{{item.discount}}</td>
+						<td>{{item.price}}</td>
+						<td>{{item.manufactor}}</td>
+						<td><button @click="dele(item.id)">删除</button></td>
+
+					</tr>
+				</tbody>
+			</table>
+			<button @click="goback()">返回</button>
+		</div>
+
+		<script src="../js/axios.js"></script>
+		<script src="../js/vue.js"></script>
+		<script>
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					seen1: false,
+					searchParam: {
+						drugId: "",
+						drugName: "",
+						manuFactor: ""
+					},
+					result: {},
+					showmsg: {
+						msginfo: "",
+						classobject: {
+							msg: false,
+							success: false
+						}
+					}
+
+				},
+				methods: {
+					search: function() {
+						this.showmsg.msginfo = "";
+						axios.post("http://localhost:8000/medical/api/drugid/getdruginfopagerlist", {
+								"drugId": this.searchParam.drugId,
+								"drugName": this.searchParam.drugName,
+								"manuFactor": this.searchParam.manuFactor
+							})
+							.then(res => {
+								this.result = res.data.result;
+							})
+							.catch(error => {
+								location.href = "F:/neusoft_test/workspace/myfront";
+							})
+					},
+
+					dele: function(id) {
+						if (confirm("是否确定要删除")) {
+							var param = {
+								"id": id
+							}
+							axios.post("http://localhost:8000/medical/api/drugid/delete", param)
+								.then(res => {
+									if (res.data.result) {
+										this.search();
+										this.showmsg.classobject.msg = false;
+										this.showmsg.classobject.success = true;
+										this.showmsg.msginfo = "删除成功";
+									} else {
+										this.showmsg.classobject.msg = true;
+										this.showmsg.classobject.success = false;
+										this.showmsg.msginfo = "删除失败"
+									}
+								})
+						}
+					},
+					goback:function(){
+						location.replace('../templates/admin.html');
+					},
+					create: function() {
+						location.replace('drugadd.html');
+					}
+				}
+
+			})
+		</script>
+
+	</body>
+</html>
