@@ -1,0 +1,70 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'org.flywaydb.flyway' version '7.8.2'
+}
+
+group = 'com.murasaki'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    maven { url 'https://maven.aliyun.com/repository/public' }
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.session:spring-session-data-redis:2.5.1'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.5.3'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.3'
+    implementation 'org.springframework.boot:spring-boot-starter-web-services:2.5.3'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:2.5.3'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket:2.5.3'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+    implementation 'org.springframework.boot:spring-boot-starter-validation:2.5.3'
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools:2.5.3'
+    runtimeOnly 'mysql:mysql-co  nnector-java:8.0.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.3'
+    testImplementation 'io.projectreactor:reactor-test:3.4.8'
+    testImplementation group: 'org.apache.velocity', name: 'velocity-engine-core', version: '2.3'
+    testImplementation group: 'com.baomidou', name: 'mybatis-plus-generator', version: '3.4.1'
+    implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+    implementation group: 'net.sf.json-lib', name: 'json-lib', version: '2.4', classifier: 'jdk15'
+    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+    testImplementation group: 'org.flywaydb', name: 'flyway-core', version: '7.8.2'
+    testImplementation group: 'org.dbunit', name: 'dbunit', version: '2.5.2'
+    testImplementation group: 'com.github.springtestdbunit', name: 'spring-test-dbunit', version: '1.3.0'
+    implementation group: 'com.github.pagehelper', name: 'pagehelper-spring-boot-starter', version: '1.3.0'
+    implementation group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.4.2'
+    implementation group: 'cn.hutool', name: 'hutool-all', version: '5.7.6'
+    implementation group: 'com.alibaba',name:'fastjson',version:'1.2.76'
+
+}
+def _driver = 'com.mysql.cj.jdbc.Driver';
+def _url = 'jdbc:mysql://47.103.119.53:3306/medicalV1.0?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=TRUE'
+def _user = 'root'
+def _password = '123456'
+def _encoding = 'UTF-8'
+
+flyway {
+    driver = _driver
+    url = _url
+    user = _user
+    password = _password
+    locations = ['classpath:db/migration']
+    encoding = _encoding
+}
+
+test {
+    useJUnitPlatform()
+}
