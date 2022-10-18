@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TesttestUnitApi" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-09T06:31:35" hostname="MURASAKI" time="10.774">
+  <properties/>
+  <testcase name="testDbInsertCleanAndException()" classname="com.murasaki.medicalinsurance.dao.InitTableData" time="10.774"/>
+  <system-out><![CDATA[14:31:24.936 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+14:31:24.952 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+14:31:24.993 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.murasaki.medicalinsurance.dao.InitTableData] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+14:31:25.008 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.murasaki.medicalinsurance.dao.InitTableData], using SpringBootContextLoader
+14:31:25.012 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.murasaki.medicalinsurance.dao.InitTableData]: class path resource [com/murasaki/medicalinsurance/dao/InitTableData-context.xml] does not exist
+14:31:25.013 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.murasaki.medicalinsurance.dao.InitTableData]: class path resource [com/murasaki/medicalinsurance/dao/InitTableDataContext.groovy] does not exist
+14:31:25.013 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.murasaki.medicalinsurance.dao.InitTableData]: no resource found for suffixes {-context.xml, Context.groovy}.
+14:31:25.014 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.murasaki.medicalinsurance.dao.InitTableData]: InitTableData does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:31:25.074 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.murasaki.medicalinsurance.dao.InitTableData]
+14:31:25.168 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [D:\Neusoft\meiyouwenti\medical-insurance-backend\medical-insurancev1.0\build\classes\java\main\com\murasaki\medicalinsurance\MedicalInsuranceApplication.class]
+14:31:25.169 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.murasaki.medicalinsurance.MedicalInsuranceApplication for test class com.murasaki.medicalinsurance.dao.InitTableData
+14:31:25.307 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.transaction.TransactionalTestExecutionListener@7f49a2ed, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3ec463e2, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7cab3db6, com.github.springtestdbunit.DbUnitTestExecutionListener@22569a0f]
+14:31:25.320 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@37bf9794 testClass = InitTableData, testInstance = com.murasaki.medicalinsurance.dao.InitTableData@4598f71b, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@67f0d7c0 testClass = InitTableData, locations = '{}', classes = '{class com.murasaki.medicalinsurance.MedicalInsuranceApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@7b7d24e0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@44b992e0, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5e9366b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@697952e8, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@2c384423, org.springframework.boot.test.web.reactive.server.WebTestClientContextCustomizer@491407b3, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@24d2b10e], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]]].
+14:31:25.351 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.5.3)
+
+2021-10-09 14:31:25.748  INFO 33980 --- [    Test worker] c.m.medicalinsurance.dao.InitTableData   : Starting InitTableData using Java 11.0.12 on Murasaki with PID 33980 (started by ASUS in D:\Neusoft\meiyouwenti\medical-insurance-backend\medical-insurancev1.0)
+2021-10-09 14:31:25.750  INFO 33980 --- [    Test worker] c.m.medicalinsurance.dao.InitTableData   : No active profile set, falling back to default profiles: default
+2021-10-09 14:31:27.150  INFO 33980 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$3b367ecc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-10-09 14:31:27.253  INFO 33980 --- [    Test worker] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+Logging initialized using 'class org.apache.ibatis.logging.stdout.StdOutImpl' adapter.
+Property 'mapperLocations' was not specified.
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.4.2 
+This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.murasaki.medicalinsurance.entity.Treatment"
+This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.murasaki.medicalinsurance.entity.DrugInfoAdd"
+This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.murasaki.medicalinsurance.entity.DrugType"
+This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.murasaki.medicalinsurance.entity.DrugInfo"
+[com.murasaki.medicalinsurance.dao.UserinfoDao.update] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Update]
+This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.murasaki.medicalinsurance.entity.findmypw"
+2021-10-09 14:31:30.220  INFO 33980 --- [    Test worker] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 7.8.2 by Redgate
+2021-10-09 14:31:30.232  INFO 33980 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-09 14:31:31.473  INFO 33980 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-09 14:31:31.594  INFO 33980 --- [    Test worker] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://47.103.119.53:3306/medicalV1.0 (MySQL 8.0)
+2021-10-09 14:31:32.780  INFO 33980 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.423s)
+2021-10-09 14:31:33.499  INFO 33980 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema `medicalV1.0`: 1.0.0
+2021-10-09 14:31:33.566  INFO 33980 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Schema `medicalV1.0` is up to date. No migration necessary.
+This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.murasaki.medicalinsurance.entity.SocialCard"
+2021-10-09 14:31:35.236  INFO 33980 --- [    Test worker] c.m.medicalinsurance.dao.InitTableData   : Started InitTableData in 9.877 seconds (JVM running for 12.077)
+test execute!
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

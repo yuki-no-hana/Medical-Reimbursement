@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.murasaki.medicalinsurance.service.serviceImpl.DruginfoSerImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-09T06:32:10" hostname="MURASAKI" time="0.275">
+  <properties/>
+  <testcase name="queryPagerByCond()" classname="com.murasaki.medicalinsurance.service.serviceImpl.DruginfoSerImplTest" time="0.275"/>
+  <system-out><![CDATA[2021-10-09 14:32:10.686  INFO 33980 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.murasaki.medicalinsurance.service.serviceImpl.DruginfoSerImplTest], using SpringBootContextLoader
+2021-10-09 14:32:10.688  INFO 33980 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.murasaki.medicalinsurance.service.serviceImpl.DruginfoSerImplTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2021-10-09 14:32:10.688  INFO 33980 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.murasaki.medicalinsurance.service.serviceImpl.DruginfoSerImplTest]: DruginfoSerImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2021-10-09 14:32:10.690  INFO 33980 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.murasaki.medicalinsurance.MedicalInsuranceApplication for test class com.murasaki.medicalinsurance.service.serviceImpl.DruginfoSerImplTest
+2021-10-09 14:32:10.691  INFO 33980 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-10-09 14:32:10.692  INFO 33980 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2a4ab07f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@23c9539d, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@17d2bec8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@f1ffc4d, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@70297c99, org.springframework.test.context.support.DirtiesContextTestExecutionListener@19158cba, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1bb345ae, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6bbe2f01, org.springframework.test.context.event.EventPublishingTestExecutionListener@50c84b5b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@658d6da4, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6492ca8e, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7e4e373a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6cce293b, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6220994b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1094f93b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f4e460f] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@610126184 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==>  Preparing: SELECT druginfo.id, druginfo.drugid, druginfo.drugname, druginfo.price, druginfo.qualification, druginfo.approval, druginfo.manufactor, drugtype.drugtypename, drugtype.discount FROM druginfo INNER JOIN drugtype ON druginfo.drugtypeid = drugtype.drugtypeid WHERE 1 = 1 AND drugid LIKE CONCAT('%',?,'%') AND drugname LIKE CONCAT('%',?,'%') AND manufactor LIKE CONCAT('%',?,'%') ORDER BY druginfo.id
+==> Parameters: 0(String), 马(String), 德(String)
+<==    Columns: id, drugid, drugname, price, qualification, approval, manufactor, drugtypename, discount
+<==        Row: 1, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 30.0, Y, N, Excella GmbH(德国)(昆山龙灯瑞迪制药有限公司分装), 乙类药, 0.7
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f4e460f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b880ab5] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1719355381 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==>  Preparing: SELECT druginfo.id, druginfo.drugid, druginfo.drugname, druginfo.price, druginfo.qualification, druginfo.approval, druginfo.manufactor, drugtype.drugtypename, drugtype.discount FROM druginfo INNER JOIN drugtype ON druginfo.drugtypeid = drugtype.drugtypeid WHERE 1 = 1 AND drugname LIKE CONCAT('%',?,'%') AND manufactor LIKE CONCAT('%',?,'%') ORDER BY druginfo.id
+==> Parameters: 马(String), 德(String)
+<==    Columns: id, drugid, drugname, price, qualification, approval, manufactor, drugtypename, discount
+<==        Row: 1, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 30.0, Y, N, Excella GmbH(德国)(昆山龙灯瑞迪制药有限公司分装), 乙类药, 0.7
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b880ab5]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@35b26f1a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@507774651 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==>  Preparing: SELECT druginfo.id, druginfo.drugid, druginfo.drugname, druginfo.price, druginfo.qualification, druginfo.approval, druginfo.manufactor, drugtype.drugtypename, drugtype.discount FROM druginfo INNER JOIN drugtype ON druginfo.drugtypeid = drugtype.drugtypeid WHERE 1 = 1 AND drugid LIKE CONCAT('%',?,'%') AND manufactor LIKE CONCAT('%',?,'%') ORDER BY druginfo.id
+==> Parameters: 0(String), 德(String)
+<==    Columns: id, drugid, drugname, price, qualification, approval, manufactor, drugtypename, discount
+<==        Row: 1, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 30.0, Y, N, Excella GmbH(德国)(昆山龙灯瑞迪制药有限公司分装), 乙类药, 0.7
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@35b26f1a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@540ccb4c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1150053738 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==>  Preparing: SELECT druginfo.id, druginfo.drugid, druginfo.drugname, druginfo.price, druginfo.qualification, druginfo.approval, druginfo.manufactor, drugtype.drugtypename, drugtype.discount FROM druginfo INNER JOIN drugtype ON druginfo.drugtypeid = drugtype.drugtypeid WHERE 1 = 1 AND drugid LIKE CONCAT('%',?,'%') AND drugname LIKE CONCAT('%',?,'%') ORDER BY druginfo.id
+==> Parameters: 0(String), 马(String)
+<==    Columns: id, drugid, drugname, price, qualification, approval, manufactor, drugtypename, discount
+<==        Row: 1, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 30.0, Y, N, Excella GmbH(德国)(昆山龙灯瑞迪制药有限公司分装), 乙类药, 0.7
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@540ccb4c]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
