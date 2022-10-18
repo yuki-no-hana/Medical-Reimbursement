@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - DruginfoSerImplTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>DruginfoSerImplTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.murasaki.medicalinsurance.service.serviceImpl.html">com.murasaki.medicalinsurance.service.serviceImpl</a> &gt; DruginfoSerImplTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.275s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">queryPagerByCond()</td>
+<td class="success">0.275s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2021-10-09 14:32:10.686  INFO 33980 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.murasaki.medicalinsurance.service.serviceImpl.DruginfoSerImplTest], using SpringBootContextLoader
+2021-10-09 14:32:10.688  INFO 33980 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.murasaki.medicalinsurance.service.serviceImpl.DruginfoSerImplTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2021-10-09 14:32:10.688  INFO 33980 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.murasaki.medicalinsurance.service.serviceImpl.DruginfoSerImplTest]: DruginfoSerImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2021-10-09 14:32:10.690  INFO 33980 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.murasaki.medicalinsurance.MedicalInsuranceApplication for test class com.murasaki.medicalinsurance.service.serviceImpl.DruginfoSerImplTest
+2021-10-09 14:32:10.691  INFO 33980 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-10-09 14:32:10.692  INFO 33980 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2a4ab07f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@23c9539d, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@17d2bec8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@f1ffc4d, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@70297c99, org.springframework.test.context.support.DirtiesContextTestExecutionListener@19158cba, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1bb345ae, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6bbe2f01, org.springframework.test.context.event.EventPublishingTestExecutionListener@50c84b5b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@658d6da4, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6492ca8e, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7e4e373a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6cce293b, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6220994b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1094f93b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f4e460f] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@610126184 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==&gt;  Preparing: SELECT druginfo.id, druginfo.drugid, druginfo.drugname, druginfo.price, druginfo.qualification, druginfo.approval, druginfo.manufactor, drugtype.drugtypename, drugtype.discount FROM druginfo INNER JOIN drugtype ON druginfo.drugtypeid = drugtype.drugtypeid WHERE 1 = 1 AND drugid LIKE CONCAT('%',?,'%') AND drugname LIKE CONCAT('%',?,'%') AND manufactor LIKE CONCAT('%',?,'%') ORDER BY druginfo.id
+==&gt; Parameters: 0(String), 马(String), 德(String)
+&lt;==    Columns: id, drugid, drugname, price, qualification, approval, manufactor, drugtypename, discount
+&lt;==        Row: 1, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 30.0, Y, N, Excella GmbH(德国)(昆山龙灯瑞迪制药有限公司分装), 乙类药, 0.7
+&lt;==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f4e460f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b880ab5] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1719355381 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==&gt;  Preparing: SELECT druginfo.id, druginfo.drugid, druginfo.drugname, druginfo.price, druginfo.qualification, druginfo.approval, druginfo.manufactor, drugtype.drugtypename, drugtype.discount FROM druginfo INNER JOIN drugtype ON druginfo.drugtypeid = drugtype.drugtypeid WHERE 1 = 1 AND drugname LIKE CONCAT('%',?,'%') AND manufactor LIKE CONCAT('%',?,'%') ORDER BY druginfo.id
+==&gt; Parameters: 马(String), 德(String)
+&lt;==    Columns: id, drugid, drugname, price, qualification, approval, manufactor, drugtypename, discount
+&lt;==        Row: 1, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 30.0, Y, N, Excella GmbH(德国)(昆山龙灯瑞迪制药有限公司分装), 乙类药, 0.7
+&lt;==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b880ab5]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@35b26f1a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@507774651 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==&gt;  Preparing: SELECT druginfo.id, druginfo.drugid, druginfo.drugname, druginfo.price, druginfo.qualification, druginfo.approval, druginfo.manufactor, drugtype.drugtypename, drugtype.discount FROM druginfo INNER JOIN drugtype ON druginfo.drugtypeid = drugtype.drugtypeid WHERE 1 = 1 AND drugid LIKE CONCAT('%',?,'%') AND manufactor LIKE CONCAT('%',?,'%') ORDER BY druginfo.id
+==&gt; Parameters: 0(String), 德(String)
+&lt;==    Columns: id, drugid, drugname, price, qualification, approval, manufactor, drugtypename, discount
+&lt;==        Row: 1, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 30.0, Y, N, Excella GmbH(德国)(昆山龙灯瑞迪制药有限公司分装), 乙类药, 0.7
+&lt;==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@35b26f1a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@540ccb4c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1150053738 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==&gt;  Preparing: SELECT druginfo.id, druginfo.drugid, druginfo.drugname, druginfo.price, druginfo.qualification, druginfo.approval, druginfo.manufactor, drugtype.drugtypename, drugtype.discount FROM druginfo INNER JOIN drugtype ON druginfo.drugtypeid = drugtype.drugtypeid WHERE 1 = 1 AND drugid LIKE CONCAT('%',?,'%') AND drugname LIKE CONCAT('%',?,'%') ORDER BY druginfo.id
+==&gt; Parameters: 0(String), 马(String)
+&lt;==    Columns: id, drugid, drugname, price, qualification, approval, manufactor, drugtypename, discount
+&lt;==        Row: 1, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 30.0, Y, N, Excella GmbH(德国)(昆山龙灯瑞迪制药有限公司分装), 乙类药, 0.7
+&lt;==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@540ccb4c]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.1.1</a> at 2021年10月9日 下午2:32:12</p>
+</div>
+</div>
+</body>
+</html>

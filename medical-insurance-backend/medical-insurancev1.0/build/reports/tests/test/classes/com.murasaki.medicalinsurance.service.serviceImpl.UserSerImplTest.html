@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - UserSerImplTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>UserSerImplTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.murasaki.medicalinsurance.service.serviceImpl.html">com.murasaki.medicalinsurance.service.serviceImpl</a> &gt; UserSerImplTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">9</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.678s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">calculateNAllDiscounted()</td>
+<td class="success">0.135s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">calculateNAllTotal()</td>
+<td class="success">0.066s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">calculateSAllDiscounted()</td>
+<td class="success">0.133s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">calculateSAllTotal()</td>
+<td class="success">0.070s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getMedicalParamByScardNum()</td>
+<td class="success">0.140s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getNTreatmentListByScardNum()</td>
+<td class="success">0.063s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getSTreatmentListByScardNum()</td>
+<td class="success">0.065s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">submitNormal()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">submitSpecial()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2021-10-09 14:32:11.272  INFO 33980 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.murasaki.medicalinsurance.service.serviceImpl.UserSerImplTest], using SpringBootContextLoader
+2021-10-09 14:32:11.273  INFO 33980 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.murasaki.medicalinsurance.service.serviceImpl.UserSerImplTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2021-10-09 14:32:11.274  INFO 33980 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.murasaki.medicalinsurance.service.serviceImpl.UserSerImplTest]: UserSerImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2021-10-09 14:32:11.275  INFO 33980 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.murasaki.medicalinsurance.MedicalInsuranceApplication for test class com.murasaki.medicalinsurance.service.serviceImpl.UserSerImplTest
+2021-10-09 14:32:11.275  INFO 33980 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-10-09 14:32:11.276  INFO 33980 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@501afb84, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1f23ee9e, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2322abe8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3de5795a, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3a2463b9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3a732d7d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@c38bc30, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1a013b44, org.springframework.test.context.event.EventPublishingTestExecutionListener@321aa16, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@209a77ca, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@698a86d5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7a424bbb, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@743d2fff, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@76a2295, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3aebb083]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e639d7c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1556431417 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==&gt;  Preparing: SELECT treatmentinfo.treatmentid, d.drugid, d.drugname, d.drugtypename, d.discount, treatmentinfo.drugnum, d.price, treatmentinfo.totalprice FROM treatmentinfo INNER JOIN (SELECT druginfo.drugid, druginfo.drugname, druginfo.price, druginfo.qualification, druginfo.approval, druginfo.manufactor, drugtype.drugtypename, drugtype.discount FROM druginfo INNER JOIN drugtype ON druginfo.drugtypeid = drugtype.drugtypeid) AS d ON treatmentinfo.drugid = d.drugid WHERE 1=1 AND treatmentinfo.scardnum = ? AND ( treatmentinfo.codeid = ?) AND ( d.approval = ?) ORDER BY treatmenttime ASC
+==&gt; Parameters: 42ab3dce2f6844e7(String), S00(String), Y(String)
+&lt;==    Columns: treatmentid, drugid, drugname, drugtypename, discount, drugnum, price, totalprice
+&lt;==        Row: d8396659b733413a97024447940bd066, 70b73b07e40d46bf99f4a1cf69cfad3e, 恩莱瑞, 乙类药, 0.7, 1, 9186.0, 9186.0
+&lt;==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e639d7c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@745998f0] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1996739453 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==&gt;  Preparing: SELECT treatmentinfo.treatmentid, d.drugid, d.drugname, d.drugtypename, d.discount, treatmentinfo.drugnum, d.price, treatmentinfo.totalprice FROM treatmentinfo INNER JOIN (SELECT druginfo.drugid, druginfo.drugname, druginfo.price, druginfo.qualification, druginfo.approval, druginfo.manufactor, drugtype.drugtypename, drugtype.discount FROM druginfo INNER JOIN drugtype ON druginfo.drugtypeid = drugtype.drugtypeid) AS d ON treatmentinfo.drugid = d.drugid WHERE 1=1 AND treatmentinfo.scardnum = ? AND ( treatmentinfo.codeid = ?) AND ( d.approval = ?) ORDER BY treatmenttime ASC
+==&gt; Parameters: 42ab3dce2f6844e7(String), S00(String), N(String)
+&lt;==    Columns: treatmentid, drugid, drugname, drugtypename, discount, drugnum, price, totalprice
+&lt;==        Row: 7deacc57e7de45edb095c2f4ec0d3ade, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 乙类药, 0.7, 5, 30.0, 150.0
+&lt;==        Row: 4ac36892a2f24c1eacbaf0919ef1da0d, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 乙类药, 0.7, 5, 30.0, 150.0
+&lt;==        Row: 69d2356abddd4e89b3f7a7b2bf67607e, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 乙类药, 0.7, 5, 30.0, 150.0
+&lt;==        Row: cc35a3426df84ef3bb47e74ced1c28b7, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 乙类药, 0.7, 5, 30.0, 150.0
+&lt;==        Row: 0aff222d89b046b6b0f12439582ff09e, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 乙类药, 0.7, 5, 30.0, 150.0
+&lt;==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@745998f0]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42a6d3fe] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1276565623 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==&gt;  Preparing: SELECT treatmentinfo.treatmentid, d.drugid, d.drugname, d.drugtypename, d.discount, treatmentinfo.drugnum, d.price, treatmentinfo.totalprice FROM treatmentinfo INNER JOIN (SELECT druginfo.drugid, druginfo.drugname, druginfo.price, druginfo.qualification, druginfo.approval, druginfo.manufactor, drugtype.drugtypename, drugtype.discount FROM druginfo INNER JOIN drugtype ON druginfo.drugtypeid = drugtype.drugtypeid) AS d ON treatmentinfo.drugid = d.drugid WHERE 1=1 AND treatmentinfo.scardnum = ? AND ( treatmentinfo.codeid = ?) AND ( d.approval = ?) ORDER BY treatmenttime ASC
+==&gt; Parameters: 42ab3dce2f6844e7(String), S00(String), N(String)
+&lt;==    Columns: treatmentid, drugid, drugname, drugtypename, discount, drugnum, price, totalprice
+&lt;==        Row: 7deacc57e7de45edb095c2f4ec0d3ade, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 乙类药, 0.7, 5, 30.0, 150.0
+&lt;==        Row: 4ac36892a2f24c1eacbaf0919ef1da0d, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 乙类药, 0.7, 5, 30.0, 150.0
+&lt;==        Row: 69d2356abddd4e89b3f7a7b2bf67607e, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 乙类药, 0.7, 5, 30.0, 150.0
+&lt;==        Row: cc35a3426df84ef3bb47e74ced1c28b7, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 乙类药, 0.7, 5, 30.0, 150.0
+&lt;==        Row: 0aff222d89b046b6b0f12439582ff09e, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 乙类药, 0.7, 5, 30.0, 150.0
+&lt;==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42a6d3fe]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4e7acc0a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@353337438 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==&gt;  Preparing: SELECT medicalparam.start, medicalparam.end, medicalparam.firstlevel, medicalparam.secondlevel, medicalparam.firstdiscount, medicalparam.seconddiscount, medicalparam.thirddiscount FROM medicalparam INNER JOIN socialcard ON medicalparam.regionid = socialcard.regionid WHERE 1=1 AND scardnum = ?
+==&gt; Parameters: 42ab3dce2f6844e7(String)
+&lt;==    Columns: start, end, firstlevel, secondlevel, firstdiscount, seconddiscount, thirddiscount
+&lt;==        Row: 1800.0, 20000.0, 3000.0, 8000.0, 0.75, 0.8, 0.9
+&lt;==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4e7acc0a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@9c8290c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@298495651 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==&gt;  Preparing: SELECT treatmentinfo.treatmentid, d.drugid, d.drugname, d.drugtypename, d.discount, treatmentinfo.drugnum, d.price, treatmentinfo.totalprice FROM treatmentinfo INNER JOIN (SELECT druginfo.drugid, druginfo.drugname, druginfo.price, druginfo.qualification, druginfo.approval, druginfo.manufactor, drugtype.drugtypename, drugtype.discount FROM druginfo INNER JOIN drugtype ON druginfo.drugtypeid = drugtype.drugtypeid) AS d ON treatmentinfo.drugid = d.drugid WHERE 1=1 AND treatmentinfo.scardnum = ? AND ( treatmentinfo.codeid = ?) AND ( d.approval = ?) ORDER BY treatmenttime ASC
+==&gt; Parameters: 42ab3dce2f6844e7(String), S00(String), Y(String)
+&lt;==    Columns: treatmentid, drugid, drugname, drugtypename, discount, drugnum, price, totalprice
+&lt;==        Row: d8396659b733413a97024447940bd066, 70b73b07e40d46bf99f4a1cf69cfad3e, 恩莱瑞, 乙类药, 0.7, 1, 9186.0, 9186.0
+&lt;==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@9c8290c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@181855ef] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1355849641 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==&gt;  Preparing: SELECT medicalparam.start, medicalparam.end, medicalparam.firstlevel, medicalparam.secondlevel, medicalparam.firstdiscount, medicalparam.seconddiscount, medicalparam.thirddiscount FROM medicalparam INNER JOIN socialcard ON medicalparam.regionid = socialcard.regionid WHERE 1=1 AND scardnum = ?
+==&gt; Parameters: 42ab3dce2f6844e7(String)
+&lt;==    Columns: start, end, firstlevel, secondlevel, firstdiscount, seconddiscount, thirddiscount
+&lt;==        Row: 1800.0, 20000.0, 3000.0, 8000.0, 0.75, 0.8, 0.9
+&lt;==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@181855ef]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a064ce6] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1080804708 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==&gt;  Preparing: SELECT medicalparam.start, medicalparam.end, medicalparam.firstlevel, medicalparam.secondlevel, medicalparam.firstdiscount, medicalparam.seconddiscount, medicalparam.thirddiscount FROM medicalparam INNER JOIN socialcard ON medicalparam.regionid = socialcard.regionid WHERE 1=1 AND scardnum = ?
+==&gt; Parameters: 42ab3dce2f6844e7(String)
+&lt;==    Columns: start, end, firstlevel, secondlevel, firstdiscount, seconddiscount, thirddiscount
+&lt;==        Row: 1800.0, 20000.0, 3000.0, 8000.0, 0.75, 0.8, 0.9
+&lt;==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a064ce6]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c14478f] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1960657303 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==&gt;  Preparing: SELECT medicalparam.start, medicalparam.end, medicalparam.firstlevel, medicalparam.secondlevel, medicalparam.firstdiscount, medicalparam.seconddiscount, medicalparam.thirddiscount FROM medicalparam INNER JOIN socialcard ON medicalparam.regionid = socialcard.regionid WHERE 1=1 AND scardnum = ?
+==&gt; Parameters: 12345shangshanda(String)
+&lt;==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c14478f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6fac4245] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@301619200 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==&gt;  Preparing: SELECT treatmentinfo.treatmentid, d.drugid, d.drugname, d.drugtypename, d.discount, treatmentinfo.drugnum, d.price, treatmentinfo.totalprice FROM treatmentinfo INNER JOIN (SELECT druginfo.drugid, druginfo.drugname, druginfo.price, druginfo.qualification, druginfo.approval, druginfo.manufactor, drugtype.drugtypename, drugtype.discount FROM druginfo INNER JOIN drugtype ON druginfo.drugtypeid = drugtype.drugtypeid) AS d ON treatmentinfo.drugid = d.drugid WHERE 1=1 AND treatmentinfo.scardnum = ? AND ( treatmentinfo.codeid = ?) AND ( d.approval = ?) ORDER BY treatmenttime ASC
+==&gt; Parameters: 42ab3dce2f6844e7(String), S00(String), Y(String)
+&lt;==    Columns: treatmentid, drugid, drugname, drugtypename, discount, drugnum, price, totalprice
+&lt;==        Row: d8396659b733413a97024447940bd066, 70b73b07e40d46bf99f4a1cf69cfad3e, 恩莱瑞, 乙类药, 0.7, 1, 9186.0, 9186.0
+&lt;==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6fac4245]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7a1736a8] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2007301573 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==&gt;  Preparing: SELECT treatmentinfo.treatmentid, d.drugid, d.drugname, d.drugtypename, d.discount, treatmentinfo.drugnum, d.price, treatmentinfo.totalprice FROM treatmentinfo INNER JOIN (SELECT druginfo.drugid, druginfo.drugname, druginfo.price, druginfo.qualification, druginfo.approval, druginfo.manufactor, drugtype.drugtypename, drugtype.discount FROM druginfo INNER JOIN drugtype ON druginfo.drugtypeid = drugtype.drugtypeid) AS d ON treatmentinfo.drugid = d.drugid WHERE 1=1 AND treatmentinfo.scardnum = ? AND ( treatmentinfo.codeid = ?) AND ( d.approval = ?) ORDER BY treatmenttime ASC
+==&gt; Parameters: 42ab3dce2f6844e7(String), S00(String), N(String)
+&lt;==    Columns: treatmentid, drugid, drugname, drugtypename, discount, drugnum, price, totalprice
+&lt;==        Row: 7deacc57e7de45edb095c2f4ec0d3ade, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 乙类药, 0.7, 5, 30.0, 150.0
+&lt;==        Row: 4ac36892a2f24c1eacbaf0919ef1da0d, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 乙类药, 0.7, 5, 30.0, 150.0
+&lt;==        Row: 69d2356abddd4e89b3f7a7b2bf67607e, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 乙类药, 0.7, 5, 30.0, 150.0
+&lt;==        Row: cc35a3426df84ef3bb47e74ced1c28b7, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 乙类药, 0.7, 5, 30.0, 150.0
+&lt;==        Row: 0aff222d89b046b6b0f12439582ff09e, fb200ae894ec434ea162e1dd490cbb69, 苯溴马隆, 乙类药, 0.7, 5, 30.0, 150.0
+&lt;==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7a1736a8]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.1.1</a> at 2021年10月9日 下午2:32:12</p>
+</div>
+</div>
+</body>
+</html>

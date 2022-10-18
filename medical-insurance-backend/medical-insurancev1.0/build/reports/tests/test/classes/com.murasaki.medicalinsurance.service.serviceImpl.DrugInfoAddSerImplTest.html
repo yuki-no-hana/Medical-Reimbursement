@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - DrugInfoAddSerImplTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>DrugInfoAddSerImplTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.murasaki.medicalinsurance.service.serviceImpl.html">com.murasaki.medicalinsurance.service.serviceImpl</a> &gt; DrugInfoAddSerImplTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.367s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">checkAndInsert()</td>
+<td class="success">0.367s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2021-10-09 14:32:10.301  INFO 33980 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.murasaki.medicalinsurance.service.serviceImpl.DrugInfoAddSerImplTest], using SpringBootContextLoader
+2021-10-09 14:32:10.304  INFO 33980 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.murasaki.medicalinsurance.service.serviceImpl.DrugInfoAddSerImplTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2021-10-09 14:32:10.305  INFO 33980 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.murasaki.medicalinsurance.service.serviceImpl.DrugInfoAddSerImplTest]: DrugInfoAddSerImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2021-10-09 14:32:10.307  INFO 33980 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.murasaki.medicalinsurance.MedicalInsuranceApplication for test class com.murasaki.medicalinsurance.service.serviceImpl.DrugInfoAddSerImplTest
+2021-10-09 14:32:10.309  INFO 33980 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2021-10-09 14:32:10.309  INFO 33980 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@270241f1, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@16575259, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@56b98649, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@473c3344, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7284ff9b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5e6dbe08, org.springframework.test.context.transaction.TransactionalTestExecutionListener@447ce042, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@627c5d9a, org.springframework.test.context.event.EventPublishingTestExecutionListener@37d11e69, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4ff7b65, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2722e548, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@27b2fcbb, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@182f8c72, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6774e841, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@574c5942]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@529032de] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1720210221 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==&gt;  Preparing: INSERT INTO druginfo ( id, drugid, drugname, price, qualification, approval, manufactor, drugtypeid ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+==&gt; Parameters: 0(Integer), 35fd1e80-87a3-483f-8ef0-aee4562663f9(String), 葡萄糖(String), 25.0(Double), Y(String), N(String), 大连制药(String), DTA(String)
+&lt;==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@529032de]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e540102] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2106796274 wrapping com.mysql.cj.jdbc.ConnectionImpl@16e806c0] will not be managed by Spring
+==&gt;  Preparing: INSERT INTO druginfo ( id, drugid, drugname, price, qualification, approval, manufactor, drugtypeid ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+==&gt; Parameters: 4(Integer), d760a727-b8c5-4444-8e81-4f94a4d5d1ab(String), 葡萄糖(String), 25.0(Double), Y(String), N(String), 大连制药(String), DTA(String)
+&lt;==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e540102]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.1.1</a> at 2021年10月9日 下午2:32:12</p>
+</div>
+</div>
+</body>
+</html>

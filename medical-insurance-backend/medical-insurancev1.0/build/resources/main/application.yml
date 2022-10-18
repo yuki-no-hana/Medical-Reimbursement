@@ -1,0 +1,35 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /medical
+spring:
+  datasource:
+    url: jdbc:mysql://47.103.119.53:3306/medicalV1.0?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driverClassName: com.mysql.cj.jdbc.Driver
+  flyway:
+    enabled: true # 正式环境才开启
+    encoding: UTF-8
+    locations: classpath:db/migration
+    sql-migration-prefix: V
+    # 迁移sql脚本文件名称的分隔符，默认2个下划线__
+    sql-migration-separator: __
+    # 迁移sql脚本文件名称的后缀
+    sql-migration-suffixes: .sql
+    # 迁移时是否进行校验，默认true
+    validate-on-migrate: true
+    # 当迁移发现数据库非空且存在没有元数据的表时，自动执行基准迁移，新建schema_version表
+    baseline-on-migrate: true
+mybatis-plus:
+  mapper-locations: com/murasaki/medicalinsurance/dao/*/xml
+  type-aliases-package: com.murasaki.medicalinsurance.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+    jdbc-type-for-null: 'null'
+    default-statement-timeout: 3000
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      update-strategy: ignored
